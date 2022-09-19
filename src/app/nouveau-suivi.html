@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>NouveauSuivi - App&apos;P</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="./style.css" />
+    <link href="./nouveau-suivi.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+
+
+      <div class="nouveau-suivi-container">
+        <header data-role="Header" class="nouveau-suivi-header">
+          <img
+            alt="image"
+            src="public/playground_assets/untitled%20design-2-200h.png"
+            class="nouveau-suivi-image"
+          />
+          <div class="nouveau-suivi-container01">
+            <div class="nouveau-suivi-nav"></div>
+          </div>
+          <div class="nouveau-suivi-btn-group">
+            <a href="index.html" class="nouveau-suivi-ancien-suivi button">
+              <img
+                alt="image"
+                src="public/playground_assets/calendar-200h.png"
+                class="nouveau-suivi-image1"
+              />
+              <span class="nouveau-suivi-text">
+                <span class="nouveau-suivi-text01">Ancien Suivis</span>
+                <br />
+              </span>
+            </a>
+            <a href="mon-profil.html" class="nouveau-suivi-mon-profil button">
+              <img
+                alt="image"
+                src="public/playground_assets/user-200h.png"
+                class="nouveau-suivi-image2"
+              />
+              <span class="nouveau-suivi-text03">Mon Profil</span>
+            </a>
+          </div>
+        </header>
+        <div class="nouveau-suivi-nouveu-suivi-container">
+          <a
+            href="nouveau-suivi.html"
+            class="nouveau-suivi-ancien-suivi1 button"
+          >
+            <img
+              alt="image"
+              src="public/playground_assets/untitled%20design-3-200h.png"
+              class="nouveau-suivi-image3"
+            />
+            <span class="nouveau-suivi-text04">Nouveau Suivi</span>
+          </a>
+          <h1 class="nouveau-suivi-heading">Nouveau Suivi</h1>
+        </div>
+        <div class="nouveau-suivi-nouveu-suiviform">
+          <form id="yes_1" class="nouveau-suivi-form-variables">
+            <label for="poidactuel" class="nouveau-suivi-label">
+              <span>Poids actuel</span>
+              <span class="nouveau-suivi-text06">*</span>
+            </label>
+            <input
+              type="text"
+              id="poidactuel"
+              value="80 kg"
+              placeholder="placeholder"
+              class="nouveau-suivi-poidactuel input"
+            />
+            <label for="poidscible" class="nouveau-suivi-label01">
+              <span>Poids ciblé</span>
+              <span class="nouveau-suivi-text08">*</span>
+            </label>
+            <input
+              type="text"
+              id="poidscible"
+              value="173 Cm"
+              placeholder="placeholder"
+              class="nouveau-suivi-poidcible input"
+            />
+            <label for="allergies" class="nouveau-suivi-label02">
+              Allergies
+            </label>
+            <input
+              type="text"
+              id="allergies"
+              value="Cacahuète"
+              placeholder="placeholder"
+              autocomplete="Cacahuète"
+              class="nouveau-suivi-input input"
+            />
+            <label for="poidscible" class="nouveau-suivi-label03">
+              Tension
+            </label>
+            <input
+              type="text"
+              id="tensio"
+              value="120/80 mmHg"
+              disabled
+              placeholder="placeholder"
+              class="nouveau-suivi-input1 input"
+            />
+            <button class="nouveau-suivi-enregistrer button">
+              <img
+                alt="image"
+                src="public/playground_assets/send-200h.png"
+                class="nouveau-suivi-image4"
+              />
+              <span class="nouveau-suivi-text09">
+                <span class="nouveau-suivi-text10">Envoyer</span>
+                <br />
+              </span>
+            </button>
+            <label for="allergies" class="nouveau-suivi-label04">
+              Intolérance
+            </label>
+            <input
+              type="text"
+              id="intolerance"
+              value="Lactose"
+              placeholder="placeholder"
+              autocomplete="Cacahuète"
+              class="nouveau-suivi-input2 input"
+            />
+            <label for="poidscible" class="nouveau-suivi-label05">
+              Température
+            </label>
+            <input
+              type="text"
+              id="temperature"
+              value="37°C"
+              disabled
+              placeholder="placeholder"
+              class="nouveau-suivi-input3 input"
+            />
+            <label for="poidscible" class="nouveau-suivi-label06">
+              fréquence cardiaque
+            </label>
+            <input
+              type="text"
+              id="freqcardi"
+              value="80 / min"
+              placeholder="placeholder"
+              class="nouveau-suivi-input4 input"
+            />
+            <label for="poidscible" class="nouveau-suivi-label07">
+              fréquence respiratoire
+            </label>
+            <input
+              type="text"
+              id="freqresp"
+              value="13 cycle"
+              placeholder="placeholder"
+              class="nouveau-suivi-input5 input"
+            />
+            <div id="q1" class="nouveau-suivi-container02">
+              <label for="poidscible" class="nouveau-suivi-label08">
+                Avez-vous changé de régime depuis votre dernière consultation ?
+                *
+              </label>
+              <div id="r1" class="nouveau-suivi-container03">
+                <input type="radio" name="radio1" id="r1_y" />
+                <label class="nouveau-suivi-text12">Oui</label>
+                <input
+                  type="radio"
+                  name="radio1"
+                  id="r1_n"
+                  class="nouveau-suivi-radiobutton1"
+                />
+                <label class="nouveau-suivi-text13">Non</label>
+              </div>
+            </div>
+            <div id="q2" class="nouveau-suivi-container04">
+              <label for="poidscible" class="nouveau-suivi-label09">
+                Êtes-vous devenu ménopausé depuis votre dernière consultation ?
+                *
+              </label>
+              <div id="r2" class="nouveau-suivi-container05">
+                <input type="radio" id="r2_y" name="radio2" />
+                <label class="nouveau-suivi-text14">Oui</label>
+                <input
+                  type="radio"
+                  name="radio2"
+                  id="r2_n"
+                  class="nouveau-suivi-radiobutton3"
+                />
+                <label class="nouveau-suivi-text15">Non</label>
+              </div>
+            </div>
+            <div id="q3" class="nouveau-suivi-container06">
+              <label for="poidscible" class="nouveau-suivi-label10">
+                Avez-vous arrêté depuis votre dernière consultation ? *
+              </label>
+              <div id="r2" class="nouveau-suivi-container07">
+                <input type="radio" id="r3_y" name="radio3" />
+                <label class="nouveau-suivi-text16">Oui</label>
+                <input
+                  type="radio"
+                  name="radio3"
+                  id="r3_n"
+                  class="nouveau-suivi-radiobutton5"
+                />
+                <label class="nouveau-suivi-text17">Non</label>
+              </div>
+            </div>
+            <div id="q4" class="nouveau-suivi-container08">
+              <label for="poidscible" class="nouveau-suivi-label11">
+                Avez-vous augmenté ou diminué votre activité physique depuis
+                votre dernière consultation ? *
+              </label>
+              <div id="r2" class="nouveau-suivi-container09">
+                <input type="radio" id="r4_y" name="radio4" />
+                <label class="nouveau-suivi-text18">Oui</label>
+                <input
+                  type="radio"
+                  name="radio4"
+                  id="r4_n"
+                  class="nouveau-suivi-radiobutton7"
+                />
+                <label class="nouveau-suivi-text19">Non</label>
+              </div>
+            </div>
+            <div id="autresremarques" class="nouveau-suivi-container10">
+              <label class="nouveau-suivi-text20">
+                <span>Autres remarques:</span>
+                <br />
+                <br />
+              </label>
+              <textarea class="nouveau-suivi-textarea textarea"></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
