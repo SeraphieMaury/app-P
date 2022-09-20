@@ -1,3 +1,4 @@
+<script src="nouveau-suivi.component.ts"></script>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -7,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="./style.css" />
-    <link href="./nouveau-suivi.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <link href="./nouveau-suivi.component.css" rel="stylesheet" />
   </head>
   <body>
     <div>
@@ -25,7 +26,7 @@
             <div class="nouveau-suivi-nav"></div>
           </div>
           <div class="nouveau-suivi-btn-group">
-            <a href="index.html" class="nouveau-suivi-ancien-suivi button">
+            <a href="index.html" class="nouveau-suivi-ancien-suivi button" routerLink="/ancien-suivis">
               <img
                 alt="image"
                 src="public/playground_assets/calendar-200h.png"
@@ -36,7 +37,7 @@
                 <br />
               </span>
             </a>
-            <a href="mon-profil.html" class="nouveau-suivi-mon-profil button">
+            <a href="mon-profil.html" class="nouveau-suivi-mon-profil button" routerLink="/mon-profil">
               <img
                 alt="image"
                 src="public/playground_assets/user-200h.png"
@@ -61,7 +62,63 @@
           <h1 class="nouveau-suivi-heading">Nouveau Suivi</h1>
         </div>
         <div class="nouveau-suivi-nouveu-suiviform">
-          <form id="yes_1" class="nouveau-suivi-form-variables">
+          <form>
+            <ul>
+              <li *ngFor="let question of this.questions; let i=index">
+                <label>{{question}}</label>
+              <div *ngIf="this.typequestion[i]=='string' ||this.typequestion[i]=='decimal' ">
+                <input
+                type="text"
+                id={{i}}
+                class="nouveau-suivi-poidactuel input"
+              />
+            </div>
+            <div *ngIf="this.typequestion[i]=='integer'">
+              <input
+              type="number"
+              id={{i}}
+              class="nouveau-suivi-poidactuel input"
+            />
+          </div>
+          <div *ngIf="this.typequestion[i]=='boolean'">
+            <div>
+              <label >Oui</label>
+              <input type="radio" id="oui{{i}}"  name="choix{{i}}" value="oui"
+                     checked>
+              
+            </div>
+        
+            <div>
+              <label >Non</label>
+              <input type="radio" id="non{{i}}" name="choix{{i}}" value="non">
+              
+            </div>
+        </div>
+        <div *ngIf="this.typequestion[i]=='choice'">
+          <div  *ngFor="let reponse of this.questionnaire.item[i].answerOption; let j=index">
+            <div>
+              <label >{{reponse.valueCoding.display}}</label>
+              <input type="radio" id="{{reponse.valueCoding.display}}{{i}}" name="choix{{i}}" value="{{reponse.valueCoding.display}}">
+            </div>
+          </div>
+      </div>
+              </li>
+            </ul>
+            <button class="nouveau-suivi-enregistrer button" (click)="envoiQuestionnaire()">
+              <img
+                alt="image"
+                src="public/playground_assets/send-200h.png"
+                class="nouveau-suivi-image4"
+              />
+              <span class="nouveau-suivi-text09">
+                <span class="nouveau-suivi-text10">Envoyer</span>
+                <br />
+              </span>
+            </button>
+
+          </form>
+
+ <!--          <form id="yes_1" class="nouveau-suivi-form-variables">
             <label for="poidactuel" class="nouveau-suivi-label">
               <span>Poids actuel</span>
               <span class="nouveau-suivi-text06">*</span>
@@ -234,7 +291,7 @@
               </label>
               <textarea class="nouveau-suivi-textarea textarea"></textarea>
             </div>
-          </form>
+          </form> -->
         </div>
       </div>
     </div>

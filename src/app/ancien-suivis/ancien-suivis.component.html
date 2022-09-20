@@ -1,0 +1,97 @@
+<script src="ancien-suivis.component.ts"></script>
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>MonProfil - App&apos;P</title>
+    <meta property="og:title" content="MonProfil - App'P" />
+    <meta property="og:title" content="NouveauSuivi - App'P" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <link href="./ancien-suivis.component.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+      
+
+      <div class="ancien-suivis-container">
+        <header data-role="Header" class="ancien-suivis-header">
+          <img
+            alt="image"
+            src="public/playground_assets/untitled%20design-2-200h.png"
+            class="ancien-suivis-image"
+          />
+          <div class="ancien-suivis-btn-group">
+            <a href="index.html" class="ancien-suivis-ancien-suivi button" routerLink="/ancien-suivis">
+              <img
+                alt="image"
+                src="public/playground_assets/calendar-200h.png"
+                class="ancien-suivis-image1"
+              />
+              <span class="ancien-suivis-text">
+                <span class="ancien-suivis-text01">Ancien Suivis</span>
+                <br />
+              </span>
+            </a>
+            <a href="mon-profil.html" class="ancien-suivis-mon-profil button" routerLink="/mon-profil">
+              <img
+                alt="image"
+                src="public/playground_assets/user-200h.png"
+                class="ancien-suivis-image2"
+              />
+              <span class="ancien-suivis-text03">Mon Profil</span>
+            </a>
+          </div>
+        </header>
+        <div class="ancien-suivis-nouveu-suivi-container">
+          <a href="nouveau-suivi.html" class="ancien-suivis-ancien-suivi1 button" routerLink="/nouveau-suivi">
+            <img
+              alt="image"
+              src="public/playground_assets/untitled%20design-3-200h.png"
+              class="ancien-suivis-image3"
+            />
+            <span class="ancien-suivis-text04">Nouveau Suivi</span>
+          </a>
+          <h1 class="ancien-suivis-text05">Ancien suivis</h1>
+        </div>
+        <table>
+            <tr> 
+                <th>Date</th> 
+                <th>Informations envoyées</th> 
+                <!-- <th>Ordonnance</th>  -->
+            </tr>
+            <!-- <li *ngFor="let question of this.questions; let i=index">
+                <label>{{question}}</label> -->
+            <tr *ngFor="let questionnairereponse of this.questionnairesreponse; let i=index">
+                <td>{{this.dates[i]}}</td>
+                <td>
+                    <ul>
+                        <li *ngFor="let question of this.questions; let j=index">
+                          {{question}} :
+                          <div *ngIf="this.typequestion[j]=='choice' ">
+                            {{questionnairereponse.item[j].answer[0].valueCoding.display}}
+                          </div>
+                          <div *ngIf="this.typequestion[j]=='string' ">
+                            {{questionnairereponse.item[j].answer[0].valueString}}
+                          </div>
+                          <div *ngIf="this.typequestion[j]=='decimal' ">
+                            {{questionnairereponse.item[j].answer[0].valueDecimal}}
+                          </div>
+                          <div *ngIf="this.typequestion[j]=='integer' ">
+                            {{questionnairereponse.item[j].answer[0].valueInteger}}
+                          </div>
+                          <div *ngIf="this.typequestion[j]=='boolean' ">
+                            {{transfoBoolean(questionnairereponse.item[j].answer[0].valueBoolean)}}
+                          </div>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

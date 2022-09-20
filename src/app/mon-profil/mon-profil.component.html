@@ -1,3 +1,4 @@
+<script src="mon-profil.component.ts"></script>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -9,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="./style.css" />
-    <link href="./mon-profil.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <link href="./mon-profil.component.css" rel="stylesheet" />
   </head>
   <body>
     <div>
@@ -24,7 +25,7 @@
             class="mon-profil-image"
           />
           <div class="mon-profil-btn-group">
-            <a href="index.html" class="mon-profil-ancien-suivi button">
+            <a href="index.html" class="mon-profil-ancien-suivi button" routerLink="/ancien-suivis">
               <img
                 alt="image"
                 src="public/playground_assets/calendar-200h.png"
@@ -35,7 +36,7 @@
                 <br />
               </span>
             </a>
-            <a href="mon-profil.html" class="mon-profil-mon-profil button">
+            <a href="mon-profil.html" class="mon-profil-mon-profil button" routerLink="/mon-profil">
               <img
                 alt="image"
                 src="public/playground_assets/user-200h.png"
@@ -46,7 +47,7 @@
           </div>
         </header>
         <div class="mon-profil-nouveu-suivi-container">
-          <a href="nouveau-suivi.html" class="mon-profil-ancien-suivi1 button">
+          <a href="nouveau-suivi.html" class="mon-profil-ancien-suivi1 button" routerLink="/nouveau-suivi">
             <img
               alt="image"
               src="public/playground_assets/untitled%20design-3-200h.png"
@@ -62,7 +63,7 @@
             <input
               type="text"
               id="profilprenom"
-              value="Saif"
+              value={{this.prenom}} 
               disabled
               placeholder="placeholder"
               class="mon-profil-textinput input"
@@ -71,7 +72,7 @@
             <input
               type="text"
               id="profilnom"
-              value="MAJID"
+              value={{this.nom}} 
               disabled
               placeholder="Nom"
               class="mon-profil-textinput1 input"
@@ -80,7 +81,7 @@
             <input
               type="text"
               id="profilddn"
-              value="26/01/1996"
+              value={{this.dtn}} 
               disabled
               placeholder="date de naissance"
               class="mon-profil-textinput2 input"
@@ -89,7 +90,7 @@
             <input
               type="text"
               id="profilsexe"
-              value="H"
+              value={{this.sexe}} 
               disabled
               placeholder="Sexe"
               class="mon-profil-textinput3 input"
@@ -98,7 +99,7 @@
             <input
               type="text"
               id="profilemail"
-              value="saif@gmail.com"
+              value={{this.email}} 
               disabled
               placeholder="Email"
               class="mon-profil-textinput4 input"
@@ -107,23 +108,44 @@
             <input
               type="number"
               id="profilnumero"
-              value="0774478651"
+              value={{this.num}} 
               disabled
               placeholder="numero"
               class="mon-profil-textinput5 input"
             />
+<!--             <label for="profiladresse" class="mon-profil-text11">Adresse</label>
+            <input
+              type="adresse"
+              id="profilnumero"
+              value={{this.adresse}} 
+              disabled
+              placeholder="adresse"
+              class="mon-profil-textinput5 input"
+            /> -->
           </form>
         </div>
         <div class="mon-profil-container-variables">
           <form class="mon-profil-form-variables">
-            <label for="profilprenom" class="mon-profil-text12">Taille</label>
+            <label for="profilprenom" class="mon-profil-text12">Taille (cm)</label>
             <input
               type="text"
-              value="173 Cm"
+              value={{this.taille}}
               placeholder="placeholder"
               class="mon-profil-taille input"
-            />
-            <label for="profilprenom" class="mon-profil-text13">
+              id="taille"
+            /> 
+            <button class="mon-profil-enregistrer button" (click)="modifierTaille()">
+              <img
+                alt="image"
+                src="public/playground_assets/diskette-200h.png"
+                class="mon-profil-image4"
+              />
+              <span class="mon-profil-text15">
+                <span class="mon-profil-text16">Modifier</span>
+                <br />
+              </span>
+            </button>
+            <!-- <label for="profilprenom" class="mon-profil-text13">
               Allergies
             </label>
             <input
@@ -141,18 +163,25 @@
               value="Lactose"
               placeholder="Email"
               class="mon-profil-intolerance input"
+            /> -->
+            
+            <label for="profilprenom" class="mon-profil-text13"> Allergies : </label>
+              <ul>
+                <li *ngFor="let allergie of this.allergies" >
+                  <div>{{allergie}}</div> 
+                </li>
+              </ul>
+              <input
+              type="text"
+              placeholder="nouvelle allergie/intolérance"
+              class="mon-profil-allergies input"
+              id="allergie"
             />
-            <button class="mon-profil-enregistrer button">
-              <img
-                alt="image"
-                src="public/playground_assets/diskette-200h.png"
-                class="mon-profil-image4"
-              />
-              <span class="mon-profil-text15">
-                <span class="mon-profil-text16">Enregistrer</span>
-                <br />
-              </span>
-            </button>
+              <button  (click)="ajouterAllergie()">
+                  <span class="mon-profil-text16">Ajouter</span>
+                  <br />
+              </button>
+            
           </form>
         </div>
       </div>
