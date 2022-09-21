@@ -1,38 +1,30 @@
 .mon-profil-container {
-  width: 100%;
-  display: flex;
-  overflow: auto;
-  min-height: 100vh;
-  align-items: center;
-  border-color: #000000;
-  border-width: 1px;
-  flex-direction: column;
   background-color: #fdfff3;
 }
+
 .mon-profil-header {
   width: 100%;
   height: 137px;
   display: flex;
-  max-width: 1400px;
   align-items: center;
-  padding-top: 32px;
-  padding-left: 48px;
-  padding-right: 48px;
   padding-bottom: 32px;
   justify-content: space-between;
   background-color: #88B9FA;
 }
+
 .mon-profil-image {
   width: 160px;
   height: 132px;
   object-fit: cover;
 }
+
 .mon-profil-btn-group {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .mon-profil-ancien-suivi {
   width: 171px;
   height: 36px;
@@ -48,6 +40,7 @@
   text-decoration: none;
   background-color: #c9e265;
 }
+
 .mon-profil-image1 {
   width: 20px;
   height: 20px;
@@ -55,12 +48,14 @@
   object-fit: cover;
   margin-left: 24px;
 }
+
 .mon-profil-text {
   align-self: center;
   margin-top: 0px;
   text-align: center;
   margin-left: 5px;
 }
+
 .mon-profil-mon-profil {
   width: 159px;
   height: 35px;
@@ -76,6 +71,7 @@
   text-decoration: none;
   background-color: #c9e265;
 }
+
 .mon-profil-image2 {
   width: 20px;
   height: 20px;
@@ -83,12 +79,14 @@
   object-fit: cover;
   margin-left: 24px;
 }
+
 .mon-profil-text03 {
   align-self: center;
   margin-top: 0px;
   text-align: center;
   margin-left: 5px;
 }
+
 .mon-profil-nouveu-suivi-container {
   width: 100%;
   height: 143px;
@@ -98,6 +96,7 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .mon-profil-ancien-suivi1 {
   width: 290px;
   height: 61px;
@@ -115,6 +114,7 @@
   text-decoration: none;
   background-color: #c9e265;
 }
+
 .mon-profil-image3 {
   width: 96px;
   height: 50px;
@@ -123,6 +123,7 @@
   margin-left: 0px;
   margin-bottom: 0px;
 }
+
 .mon-profil-text04 {
   font-size: 25px;
   align-self: center;
@@ -132,10 +133,12 @@
   margin-right: 0px;
   margin-bottom: 0px;
 }
+
 .mon-profil-text05 {
   align-self: flex-start;
   margin-left: 64px;
 }
+
 .mon-profil-container-constants {
   flex: 0 0 auto;
   width: 100%;
@@ -143,13 +146,15 @@
   align-items: center;
   justify-content: center;
 }
+
 .mon-profil-form-constants {
   width: 642px;
-  height: 244px;
+  height: 375px;
   position: relative;
   border-radius: 25px;
   background-color: #D9D9D9;
 }
+
 .mon-profil-text06 {
   top: 36px;
   left: 64px;
@@ -157,12 +162,14 @@
   font-size: 20px;
   padding-top: 0px;
 }
+
 .mon-profil-textinput {
   top: 32px;
   left: 141px;
   width: 144px;
   position: absolute;
 }
+
 .mon-profil-text07 {
   top: 36px;
   right: 244px;
@@ -170,12 +177,14 @@
   font-size: 20px;
   padding-top: 0px;
 }
+
 .mon-profil-textinput1 {
   top: 33px;
   right: 47px;
   width: 144px;
   position: absolute;
 }
+
 .mon-profil-text08 {
   top: 104px;
   left: 64px;
@@ -183,12 +192,14 @@
   font-size: 20px;
   padding-top: 0px;
 }
+
 .mon-profil-textinput2 {
   top: 100px;
   left: 144px;
   width: 144px;
   position: absolute;
 }
+
 .mon-profil-text09 {
   top: 104px;
   right: 239px;
@@ -196,38 +207,58 @@
   font-size: 20px;
   padding-top: 0px;
 }
+
 .mon-profil-textinput3 {
   top: 97px;
   right: 49px;
   width: 144px;
   position: absolute;
 }
+
 .mon-profil-text10 {
   left: 64px;
-  bottom: 47px;
+  top: 175px;
   position: absolute;
   font-size: 20px;
   padding-top: 0px;
 }
+
 .mon-profil-textinput4 {
   top: 165px;
   left: 142px;
-  width: 200px;
+  width: 391px;
   position: absolute;
 }
+
 .mon-profil-text11 {
-  right: 212px;
-  bottom: 47px;
+  left: 64px;
+  top: 243px;
   position: absolute;
   font-size: 20px;
   padding-top: 0px;
 }
+
 .mon-profil-textinput5 {
-  top: 167px;
-  right: 50px;
+  top: 235px;
+  left: 142px;
   width: 144px;
   position: absolute;
 }
+.mon-profil-text123 {
+  left: 61px;
+  top: 311px;
+  position: absolute;
+  font-size: 20px;
+  padding-top: 0px;
+}
+
+.mon-profil-textinput123 {
+  top: 306px;
+  left: 144px;
+  width: 405px;
+  position: absolute;
+}
+
 .mon-profil-container-variables {
   width: 100%;
   height: 368px;
@@ -235,6 +266,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .mon-profil-form-variables {
   width: 50%;
   height: 301px;
@@ -243,6 +275,7 @@
   border-radius: 25px;
   background-color: #ffffff;
 }
+
 .mon-profil-text12 {
   top: 36px;
   left: 64px;
@@ -251,6 +284,7 @@
   padding-top: 0px;
   padding-right: 8px;
 }
+
 .mon-profil-taille {
   top: 32px;
   left: 213px;
@@ -258,6 +292,7 @@
   position: absolute;
   padding-right: 8px;
 }
+
 .mon-profil-text13 {
   top: 121px;
   left: 63px;
@@ -266,6 +301,7 @@
   padding-top: 0px;
   padding-right: 8px;
 }
+
 .mon-profil-allergies {
   top: 119px;
   left: 206px;
@@ -273,6 +309,7 @@
   position: absolute;
   padding-right: 8px;
 }
+
 .mon-profil-text14 {
   left: 66px;
   bottom: 73px;
@@ -281,6 +318,7 @@
   padding-top: 0px;
   padding-right: 8px;
 }
+
 .mon-profil-intolerance {
   left: 207px;
   width: 200px;
@@ -288,6 +326,7 @@
   position: absolute;
   padding-right: 8px;
 }
+
 .mon-profil-enregistrer {
   right: 13px;
   width: 159px;
@@ -304,6 +343,7 @@
   padding-bottom: 0px;
   background-color: #c9e265;
 }
+
 .mon-profil-image4 {
   width: 20px;
   height: 20px;
@@ -311,76 +351,256 @@
   object-fit: cover;
   margin-left: 24px;
 }
+
 .mon-profil-text15 {
   align-self: center;
   margin-top: 0px;
   text-align: center;
   margin-left: 5px;
 }
+
 @media(max-width: 991px) {
   .mon-profil-header {
     height: 117px;
     background-color: #88B9FA;
   }
+
   .mon-profil-image {
     width: 185px;
     height: 118px;
   }
+
   .mon-profil-ancien-suivi {
     display: flex;
     flex-direction: row;
     background-color: #c9e265;
   }
+
   .mon-profil-text {
     margin-left: 8px;
   }
+
   .mon-profil-text01 {
     margin-left: 8px;
   }
+
   .mon-profil-mon-profil {
     display: flex;
     flex-direction: row;
     background-color: #c9e265;
   }
+
   .mon-profil-text03 {
     margin-left: 8px;
   }
+
   .mon-profil-ancien-suivi1 {
     display: flex;
     flex-direction: row;
     background-color: #c9e265;
   }
+
   .mon-profil-text04 {
     margin-left: 8px;
   }
+
   .mon-profil-enregistrer {
     display: flex;
     flex-direction: row;
     background-color: #c9e265;
   }
+
   .mon-profil-text15 {
     margin-left: 8px;
   }
+
   .mon-profil-text16 {
     margin-left: 8px;
   }
 }
+
 @media(max-width: 767px) {
   .mon-profil-header {
     padding-left: 32px;
     padding-right: 32px;
   }
+
   .mon-profil-btn-group {
     display: none;
   }
 }
+
 @media(max-width: 479px) {
   .mon-profil-header {
     padding: 16px;
   }
+
   .mon-profil-ancien-suivi1 {
     width: 301px;
     height: 58px;
     align-self: center;
   }
+}
+
+html {
+  line-height: 1.15;
+}
+
+
+
+* {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+}
+
+p,
+li,
+ul,
+pre,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focus,
+[type="button"]:-moz-focus,
+[type="reset"]:-moz-focus,
+[type="submit"]:-moz-focus {
+  outline: 1px dotted ButtonText;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+input {
+  padding: 2px 4px;
+}
+
+img {
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+html {
+  font-family: Inter;
+  font-size: 16px;
+}
+
+
+
+.input {
+  color: #000000;
+  cursor: auto;
+  padding: 0.5rem 1rem;
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+
+}
+
+.textarea {
+  color: #000000;
+  cursor: auto;
+  padding: 0.5rem;
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+}
+
+.content {
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.heading {
+  font-size: 32px;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
+.example-chip-list {
+  width: 100%;
+  bottom: -100px;
+background-color: #c3ff8f;
+border-radius: 25px;
+padding: 10px;
+
+}
+
+.input-chip{
+  background-color: antiquewhite;
+  border-radius: 25px;
+  width: 150px;
+  height: 30px;
+}
+
+
+.mat-standard-chip.mat-chip-with-trailing-icon {
+  background-color: beige;
+  border-radius: 10px;
+}
+
+input.mat-chip-input {
+  width: 150px;
+  margin: 4px;
+  flex: none;
+  
+}
+
+.mat-chip-list-wrapper {
+  display: block;
+  flex-direction: row;
+  flex: none;
+  align-items: center;
+  margin: 10px;
 }
