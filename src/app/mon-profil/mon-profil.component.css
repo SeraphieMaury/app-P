@@ -300,12 +300,14 @@
   padding-right: 8px;
 }
 .mon-profil-text120 {
-  top: -37px;
+  top: -50px;
   left: 10px;
   position: absolute;
   font-size: 20px;
   padding-top: 0px;
   padding-right: 8px;
+  font-family:Courier New, monospace;
+
 }
 
 .mon-profil-taille {
