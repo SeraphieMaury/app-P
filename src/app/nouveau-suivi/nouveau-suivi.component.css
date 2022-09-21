@@ -527,3 +527,11 @@
     align-self: center;
   }
 }
+
+.nouveau-suivi-form-constants {
+  width: 500px;
+  height: 250px;
+  position: relative;
+  border-radius: 25px;
+  background-color: #ffffff;
+}

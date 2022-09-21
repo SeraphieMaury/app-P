@@ -9,7 +9,7 @@ import { NouveauSuiviComponent } from './nouveau-suivi/nouveau-suivi.component';
 import { AncienSuivisComponent } from './ancien-suivis/ancien-suivis.component';
 
 const appRoutes: Routes = [
-  {path: "", redirectTo: "/mon-profil", pathMatch: "full"},
+  {path: "", redirectTo: "/ancien-suivis", pathMatch: "full"},
   {path: "mon-profil", component: MonProfilComponent},
   {path: "nouveau-suivi", component: NouveauSuiviComponent},
   {path: "ancien-suivis", component: AncienSuivisComponent}

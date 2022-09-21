@@ -62,7 +62,7 @@
           <h1 class="nouveau-suivi-heading">Nouveau Suivi</h1>
         </div>
         <div class="nouveau-suivi-nouveu-suiviform">
-          <form>
+          <form >
             <ul>
               <li *ngFor="let question of this.questions; let i=index">
                 <label>{{question}}</label>
@@ -71,6 +71,7 @@
                 type="text"
                 id={{i}}
                 class="nouveau-suivi-poidactuel input"
+                required
               />
             </div>
             <div *ngIf="this.typequestion[i]=='integer'">
@@ -78,6 +79,7 @@
               type="number"
               id={{i}}
               class="nouveau-suivi-poidactuel input"
+              required
             />
           </div>
           <div *ngIf="this.typequestion[i]=='boolean'">
@@ -98,7 +100,7 @@
           <div  *ngFor="let reponse of this.questionnaire.item[i].answerOption; let j=index">
             <div>
               <label >{{reponse.valueCoding.display}}</label>
-              <input type="radio" id="{{reponse.valueCoding.display}}{{i}}" name="choix{{i}}" value="{{reponse.valueCoding.display}}">
+              <input type="radio" id="{{reponse.valueCoding.display}}{{i}}" name="choix{{i}}" value="{{reponse.valueCoding.display}}" checked>
             </div>
           </div>
       </div>

@@ -13,7 +13,9 @@ import { Observable } from "rxjs"
 export class NouveauSuiviComponent implements OnInit {
     questionnaire: any = [];
     questions: any = [];
-    typequestion: any = []
+    typequestion: any = [];
+    careplan: any = [];
+    idscareplan: any = [];
 
 
     constructor(private router: Router, private http: HttpClient) {
@@ -30,6 +32,20 @@ export class NouveauSuiviComponent implements OnInit {
     }
 
     envoiQuestionnaire() {
+    const headers = { 'content-type': 'application/json' }
+    //Creation service request :
+    const bodycareplan = JSON.stringify({
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/007",
+          "display": "Johana Dahan"
+        }
+      })
+    this.http.post("https://fhir.alliance4u.io/api/care-plan", bodycareplan, { 'headers': headers }).subscribe(data => { this.careplan = data})
+    
+ 
         var codeq1 = ""
         var displayq1=""
         var date=(document.getElementById('1') as HTMLInputElement).value
@@ -88,15 +104,19 @@ export class NouveauSuiviComponent implements OnInit {
         }
 
 
-        const headers = { 'content-type': 'application/json' }
-        const body = JSON.stringify(
+
+        const bodyquest = JSON.stringify(
             {
                 "resourceType": "QuestionnaireResponse",
+                "basedOn" : [{
+                    "reference": "CarePlan/"+this.careplan.id
+                }],
                 "questionnaire": "Questionnaire/6322c934256fb300187f6e7c",
                 "status": "completed",
                 "authored" : (new Date()).toJSON(),
                 "source": {
-                    "reference": "Patient/007"
+                    "reference": "Patient/007",
+                    "display" : "Johana Dahan"
                 },
                 "item": [
                     {
@@ -234,7 +254,8 @@ export class NouveauSuiviComponent implements OnInit {
                 ]
             }
         );
-        this.http.post(" https://fhir.alliance4u.io/api/questionnaire-response", body, { 'headers': headers }).subscribe(data => { })
+        this.http.post(" https://fhir.alliance4u.io/api/questionnaire-response", bodyquest, { 'headers': headers }).subscribe(data => {
+         })
 
     }
 }
