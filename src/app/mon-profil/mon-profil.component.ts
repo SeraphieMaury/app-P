@@ -144,7 +144,9 @@ ajouterAllergie() {
             "reference": "Patient/007"
         }
     })
-    this.http.post(" https://fhir.alliance4u.io/api/allergy-intolerance", body,{'headers':headers}).subscribe(data => {}) 
+    this.http.post(" https://fhir.alliance4u.io/api/allergy-intolerance", body,{'headers':headers}).subscribe(data => {
+        console.log("postallergie")
+    }) 
     }
 
     supprimerAllergie(){

@@ -6,11 +6,11 @@ import { Observable } from "rxjs"
 
 
 @Component({
-    selector: "app-ancien-suivis",
-    templateUrl: "./ancien-suivis.component.html",
-    styleUrls: ["./ancien-suivis.component.css"]
+    selector: "app-anciens-suivis",
+    templateUrl: "./anciens-suivis.component.html",
+    styleUrls: ["./anciens-suivis.component.css"]
 })
-export class AncienSuivisComponent implements OnInit {
+export class AnciensSuivisComponent implements OnInit {
     questionnairesreponse: any = [];
     dates :any = []
     questionnaire: any = [];

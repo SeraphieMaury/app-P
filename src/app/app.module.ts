@@ -6,13 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MonProfilComponent } from './mon-profil/mon-profil.component';
 import { NouveauSuiviComponent } from './nouveau-suivi/nouveau-suivi.component';
-import { AncienSuivisComponent } from './ancien-suivis/ancien-suivis.component';
+import { AnciensSuivisComponent } from './anciens-suivis/anciens-suivis.component';
 
 const appRoutes: Routes = [
-  {path: "", redirectTo: "/ancien-suivis", pathMatch: "full"},
+  {path: "", redirectTo: "/anciens-suivis", pathMatch: "full"},
   {path: "mon-profil", component: MonProfilComponent},
   {path: "nouveau-suivi", component: NouveauSuiviComponent},
-  {path: "ancien-suivis", component: AncienSuivisComponent}
+  {path: "anciens-suivis", component: AnciensSuivisComponent}
 ]
 
 @NgModule({
@@ -20,7 +20,7 @@ const appRoutes: Routes = [
     AppComponent,
     MonProfilComponent,
     NouveauSuiviComponent,
-    AncienSuivisComponent
+    AnciensSuivisComponent
   ],
   imports: [
     BrowserModule,
