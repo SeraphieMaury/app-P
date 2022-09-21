@@ -134,7 +134,7 @@
               class="mon-profil-taille input"
               id="taille"
             /> 
-            <button class="mon-profil-enregistrer button" (click)="modifierTaille();">
+            <button class="mon-profil-enregistrer button" (click)="modifierTaille(); reloadPage();">
               <img
                 alt="image"
                 src="https://bashify.io/img/7f3af06d6f7af4ce1212e1ef16fe0023"
@@ -184,7 +184,8 @@
 
               
                 <mat-form-field class="example-chip-list" appearance="fill">
-                  <mat-label></mat-label>
+                  <span class="mon-profil-text120">Allergies: </span>
+
                   <mat-chip-list #chipList aria-label="Allergie selection">
                     <mat-chip *ngFor="let allergie of allergies" (removed)="supprimerAllergie(allergie)">
                       {{allergie}}
@@ -194,13 +195,12 @@
                     </mat-chip>
                     <input class="input-chip"placeholder="Ajouter Allergie"
                            [matChipInputFor]="chipList"
-                           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                            [matChipInputAddOnBlur]="addOnBlur"
                            (matChipInputTokenEnd)="ajouterAllergie($event)">
                   </mat-chip-list>
                 </mat-form-field>
               
- 
+                <!-- [matChipInputSeparatorKeyCodes]="separatorKeysCodes" -->
             
           </form>
           

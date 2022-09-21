@@ -1,3 +1,4 @@
+
 .mon-profil-container {
   background-color: #fdfff3;
 }
@@ -54,6 +55,8 @@
   margin-top: 0px;
   text-align: center;
   margin-left: 5px;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .mon-profil-mon-profil {
@@ -83,11 +86,12 @@
 .mon-profil-text03 {
   margin-left: 8px;
   font-family: Courier New, monospace;
-  font-size: 20px;
+  font-size: 13px;
   text-align: center;
   align-self: center;
   margin-top: 0px;
   margin-left: 5px;
+  font-weight: 700;
 }
 
 .mon-profil-nouveu-suivi-container {
@@ -129,13 +133,14 @@
 }
 
 .mon-profil-text04 {
-  font-size: 25px;
+  font-size: 23px;
   align-self: center;
   margin-top: 0px;
   text-align: center;
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 0px;
+  font-weight: 700;
 }
 
 .mon-profil-text05 {
@@ -157,6 +162,8 @@
   position: relative;
   border-radius: 25px;
   background-color: #D9D9D9;
+  border: solid;
+  border-color: #88B9FA;
 }
 
 .mon-profil-text06 {
@@ -258,8 +265,8 @@
 
 .mon-profil-textinput123 {
   top: 306px;
-  left: 144px;
-  width: 405px;
+  left: 156px;
+  width: 451px;
   position: absolute;
 }
 
@@ -275,14 +282,26 @@
   width: 50%;
   height: 301px;
   position: relative;
-  margin-top: 96px;
+  margin-top: 101px;
   border-radius: 25px;
-  background-color: #ffffff;
+  background-color: #e1eeff;
+  border: solid;
+  margin-bottom: 84px;
+  padding-bottom: 18px;
+  border-color: #88B9FA;
 }
 
 .mon-profil-text12 {
   top: 36px;
   left: 64px;
+  position: absolute;
+  font-size: 20px;
+  padding-top: 0px;
+  padding-right: 8px;
+}
+.mon-profil-text120 {
+  top: -37px;
+  left: 10px;
   position: absolute;
   font-size: 20px;
   padding-top: 0px;
@@ -346,6 +365,7 @@
   flex-direction: row;
   padding-bottom: 0px;
   background-color: #c9e265;
+  z-index: 10;
 }
 
 .mon-profil-image4 {
@@ -481,7 +501,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
+  /* font-family: inherit; */
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
@@ -532,7 +552,7 @@ html {
 }
 
 html {
-  font-family: Inter;
+  font-family:Courier New, monospace;
   font-size: 16px;
 }
 
@@ -560,7 +580,7 @@ html {
 
 .content {
   font-size: 16px;
-  font-family: Inter;
+  /* font-family: Inter; */
   font-weight: 400;
   line-height: 1.15;
   text-transform: none;
@@ -569,7 +589,7 @@ html {
 
 .heading {
   font-size: 32px;
-  font-family: Inter;
+  /* font-family: Inter; */
   font-weight: 700;
   line-height: 1.15;
   text-transform: none;
@@ -577,28 +597,32 @@ html {
 }
 .example-chip-list {
   width: 100%;
+  height: 198px;
   bottom: -100px;
-background-color: #c3ff8f;
-border-radius: 25px;
-padding: 10px;
+  background-color: #c9e26574;
+  border-radius: 25px;
+  padding: 37px;
 
 }
 
 .input-chip{
-  background-color: antiquewhite;
+  background-color: #c7e0ff;
   border-radius: 25px;
   width: 150px;
   height: 30px;
+  padding-left: 10px;
+  
 }
 
 
 .mat-standard-chip.mat-chip-with-trailing-icon {
-  background-color: beige;
+  background-color: #accffa;
   border-radius: 10px;
+
 }
 
 input.mat-chip-input {
-  width: 150px;
+  width: 163px;
   margin: 4px;
   flex: none;
   
@@ -606,20 +630,25 @@ input.mat-chip-input {
 
 .mat-chip-list-wrapper {
   display: block;
-  flex-direction: row;
-  flex: none;
-  align-items: center;
-  margin: 10px;
+  position: absolute;
+
 }
 .titrepage{
   align-self: flex-start;
   margin-left: 64px;
-  font-size: 40px;
-  font-family:Courier New, monospace;
-  background-color:  #c9e265;
+  font-size: 23px;
+  font-family: Courier New, monospace;
+  background-color: #f2fec2;
   border-radius: 15px;
-  height : 50px;
-  width: 25%;
-  text-align : center;
+  height: 32px;
+  width: 18%;
+  text-align: center;
 
+}
+.mat-form-field-wrapper {
+  position: absolute;
+  margin-top: 35px;
+}
+body{
+  font-family:Courier New, monospace;
 }

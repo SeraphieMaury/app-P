@@ -35,11 +35,11 @@ export class MonProfilComponent implements OnInit {
     tailles: any = [];
     datestailles: any = [];
     taille = ""
-    readonly separatorKeysCodes = [ENTER, COMMA] as const;
+    // readonly separatorKeysCodes = [ENTER, COMMA] as const;
     addOnBlur = true;
 
 
-    constructor(private router: Router, private http: HttpClient) {
+    constructor(private router: Router, private http: HttpClient, public routers: Router) {
     }
 
     ngOnInit() {
@@ -138,7 +138,10 @@ const body=JSON.stringify({
   "valueDateTime": (new Date()).toJSON()
 });
 this.http.post("https://fhir.alliance4u.io/api/observation", body,{'headers':headers}).subscribe(data => {}) 
+this.routers.navigate(["mon-profil"])
+
 }
+
 
 ajouterAllergie(event: MatChipInputEvent) {
     const value = (event.value || '').trim();
@@ -175,12 +178,19 @@ ajouterAllergie(event: MatChipInputEvent) {
 
         
     }
-    calculerIdAllergie(index: any){
 
-
-
+    reloadPage(){
+        setTimeout(function(){
+            location.reload()
+        }, 500);
     }
 
+
+
+
+
 }
+
+
 
 
