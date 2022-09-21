@@ -2,6 +2,16 @@ import { HttpClient } from "@angular/common/http"
 import { Component, OnInit } from "@angular/core"
 import { Router } from "@angular/router"
 import { Observable } from "rxjs"
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import {MatChipInputEvent} from '@angular/material/chips';
+
+
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+
+
+
+// import 'rxjs/add/observable/of';
+// import 'rxjs/add/operator/filter';
 
 
 
@@ -25,6 +35,8 @@ export class MonProfilComponent implements OnInit {
     tailles: any = [];
     datestailles: any = [];
     taille = ""
+    readonly separatorKeysCodes = [ENTER, COMMA] as const;
+    addOnBlur = true;
 
 
     constructor(private router: Router, private http: HttpClient) {
@@ -128,15 +140,15 @@ const body=JSON.stringify({
 this.http.post("https://fhir.alliance4u.io/api/observation", body,{'headers':headers}).subscribe(data => {}) 
 }
 
-ajouterAllergie() {
-    var nouvelleAllergie = (document.getElementById('allergie') as HTMLInputElement).value
+ajouterAllergie(event: MatChipInputEvent) {
+    const value = (event.value || '').trim();
     const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify({
         "resourceType": "AllergyIntolerance",
         "code": {
             "coding": [
                 {
-                    "display": nouvelleAllergie
+                    "display": value
                 }
             ]
         },
@@ -145,12 +157,29 @@ ajouterAllergie() {
         }
     })
     this.http.post(" https://fhir.alliance4u.io/api/allergy-intolerance", body,{'headers':headers}).subscribe(data => {}) 
-    }
+    
+}
 
-    supprimerAllergie(){
+    supprimerAllergie(allergie: any){
+        const index = this.allergies.indexOf(allergie);
+        if (index >= 0) {
+            this.allergies.splice(index, 1);
+        }
+        for (let x of this.allergiesdata) {
+            if(x.code.coding[0].display == allergie){
+                this.http.delete("https://fhir.alliance4u.io/api/allergy-intolerance/"+x.id).subscribe(data => {
+                });
+            }
+        }
+        console.log(this.allergiesdata)
+
         
     }
-    
+    calculerIdAllergie(index: any){
+
+
+
+    }
 
 }
 

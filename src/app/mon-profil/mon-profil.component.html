@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
 
-    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <!-- <link rel="stylesheet" href="../style.css" /> -->
     <link href="./mon-profil.component.css" rel="stylesheet" />
   </head>
   <body>
@@ -113,15 +113,15 @@
               placeholder="numero"
               class="mon-profil-textinput5 input"
             />
-<!--             <label for="profiladresse" class="mon-profil-text11">Adresse</label>
+            <label for="profiladresse" class="mon-profil-text123">Adresse</label>
             <input
               type="adresse"
               id="profilnumero"
               value={{this.adresse}} 
               disabled
               placeholder="adresse"
-              class="mon-profil-textinput5 input"
-            /> -->
+              class="mon-profil-textinput123 input"
+            />
           </form>
         </div>
         <div class="mon-profil-container-variables">
@@ -134,14 +134,14 @@
               class="mon-profil-taille input"
               id="taille"
             /> 
-            <button class="mon-profil-enregistrer button" (click)="modifierTaille()">
+            <button class="mon-profil-enregistrer button" (click)="modifierTaille();">
               <img
                 alt="image"
                 src="https://bashify.io/img/7f3af06d6f7af4ce1212e1ef16fe0023"
                 class="mon-profil-image4"
               />
               <span class="mon-profil-text15">
-                <span class="mon-profil-text16">Modifier</span>
+                <span class="mon-profil-text16">Enregistrer</span>
                 <br />
               </span>
             </button>
@@ -165,7 +165,7 @@
               class="mon-profil-intolerance input"
             /> -->
             
-            <label for="profilprenom" class="mon-profil-text13"> Allergies : </label>
+            <!-- <label for="profilprenom" class="mon-profil-text13"> Allergies : </label>
               <ul>
                 <li *ngFor="let allergie of this.allergies" >
                   <div>{{allergie}}</div> 
@@ -176,15 +176,38 @@
               placeholder="nouvelle allergie/intolérance"
               class="mon-profil-allergies input"
               id="allergie"
-            />
-              <button  (click)="ajouterAllergie()">
+            /> -->
+              <!-- <button  (click)="ajouterAllergie()">
                   <span class="mon-profil-text16">Ajouter</span>
                   <br />
-              </button>
+              </button> -->
+
+              
+                <mat-form-field class="example-chip-list" appearance="fill">
+                  <mat-label></mat-label>
+                  <mat-chip-list #chipList aria-label="Allergie selection">
+                    <mat-chip *ngFor="let allergie of allergies" (removed)="supprimerAllergie(allergie)">
+                      {{allergie}}
+                      <button matChipRemove>
+                        <mat-icon>cancel</mat-icon>
+                      </button>
+                    </mat-chip>
+                    <input class="input-chip"placeholder="Ajouter Allergie"
+                           [matChipInputFor]="chipList"
+                           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                           [matChipInputAddOnBlur]="addOnBlur"
+                           (matChipInputTokenEnd)="ajouterAllergie($event)">
+                  </mat-chip-list>
+                </mat-form-field>
+              
+ 
             
           </form>
+          
+          
         </div>
       </div>
     </div>
+    
   </body>
 </html>
