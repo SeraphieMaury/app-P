@@ -48,65 +48,65 @@
           </div>
         </header>
         <div class="nouveau-suivi-nouveu-suivi-container">
-          <a
-            href="nouveau-suivi.html"
-            class="nouveau-suivi-anciens-suivi1 button"
-          >
-            <img
-              alt="image"
-              src="https://i.imgur.com/c6Egi0j.png"
-              class="nouveau-suivi-image3"
-            />
-            <span class="nouveau-suivi-text04">Nouveau Suivi</span>
-          </a>
-          <h1 class="nouveau-suivi-heading">Nouveau Suivi</h1>
+          <h1 class="titrepage">Nouveau Suivi </h1>
         </div>
-        <div class="nouveau-suivi-nouveu-suiviform">
-          <form >
+        <div class="container">
+          <form class="nouveau-suivi-form-constants" (submit)="envoiQuestionnaire()">
             <ul>
-              <li *ngFor="let question of this.questions; let i=index">
-                <label>{{question}}</label>
+              
+              <li *ngFor="let question of this.questions; let i=index" class="liste">
+                <div class="box">
+                <label class="question">{{question}}</label>
+              <br>
               <div *ngIf="this.typequestion[i]=='string' ||this.typequestion[i]=='decimal' ">
+                <div *ngIf=" "></div>
+                <br>
                 <input
                 type="text"
                 id={{i}}
-                class="nouveau-suivi-poidactuel input"
+                class="inputtext"
                 required
               />
+              </div>
             </div>
+            <br>
             <div *ngIf="this.typequestion[i]=='integer'">
               <input
               type="number"
               id={{i}}
-              class="nouveau-suivi-poidactuel input"
+              class="inputtext"
               required
             />
           </div>
           <div *ngIf="this.typequestion[i]=='boolean'">
+            <br>
             <div>
-              <label >Oui</label>
-              <input type="radio" id="oui{{i}}"  name="choix{{i}}" value="oui"
+              <input type="radio" id="oui{{i}}"  name="choix{{i}}" class="radio"  value="oui"
                      checked>
-              
+              <label for="oui{{i}}">Oui</label>
             </div>
-        
+            <br>
             <div>
-              <label >Non</label>
-              <input type="radio" id="non{{i}}" name="choix{{i}}" value="non">
-              
+              <input type="radio" id="non{{i}}" name="choix{{i}}" value="non" class="radio">
+              <label for="non{{i}}">Non</label>
             </div>
+            <br>
         </div>
         <div *ngIf="this.typequestion[i]=='choice'">
           <div  *ngFor="let reponse of this.questionnaire.item[i].answerOption; let j=index">
+            <br>
             <div>
-              <label >{{reponse.valueCoding.display}}</label>
-              <input type="radio" id="{{reponse.valueCoding.display}}{{i}}" name="choix{{i}}" value="{{reponse.valueCoding.display}}" checked>
+              <input type="radio" id="{{reponse.valueCoding.display}}{{i}}" name="choix{{i}}" value="{{reponse.valueCoding.display}}" class="radio" checked>
+              <label for="{{reponse.valueCoding.display}}{{i}}">{{reponse.valueCoding.display}}</label>
             </div>
           </div>
-      </div>
+          <br>
+      </div> 
+    </div>
               </li>
+            
             </ul>
-            <button class="nouveau-suivi-enregistrer button" (click)="envoiQuestionnaire()">
+            <button type="submit" class="nouveau-suivi-enregistrer button">
               <img
                 alt="image"
                 src="https://bashify.io/img/fce74472aa8ab09839e4dfed22df4335"
