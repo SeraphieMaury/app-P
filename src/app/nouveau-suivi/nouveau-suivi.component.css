@@ -533,7 +533,7 @@
   width: 70%;
   height: 100%;
   border-radius: 15px;
-  border: 5px solid #88B9F1;
+  border: 5px solid #88B9FA;
 
 }
 
@@ -581,11 +581,11 @@ input[type="radio"].radio + label::after {
   border-radius: 1rem;
 }
 input[type="radio"].radio + label::before {
-  border: 1px solid #88B9F1;
+  border: 1px solid #88B9FA;
   background-color: #eee;
 }
 input[type="radio"].radio:checked + label::after {
-  background-color: #88B9F1;
+  background-color: #88B9FA;
 }
 
 .question {
@@ -599,7 +599,7 @@ list-style-type : none;
 }
 
 .inputtext {
-  border:2px solid #88B9F1;
+  border:2px solid #88B9FA;
   border-radius: 15px;
   height : 30px;
   margin: 0 50px 0 50px;

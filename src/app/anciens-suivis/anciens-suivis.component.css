@@ -206,3 +206,85 @@
   text-align : center;
 
 }
+
+table {
+  border-width:5px; 
+  border-style:solid; 
+  border-color:#88B9FA;
+  width:50%;
+  border-collapse:collapse
+  }
+
+ td { 
+  border-width:5px;
+  border-style:solid; 
+  border-color:#88B9FA;
+  width:50%; 
+  font-size : 20px;
+  }
+
+  th{ 
+    border-width:5px;
+    border-style:solid; 
+    border-color:#88B9FA;
+    width:50%; 
+    font-size : 20px;
+    }
+
+  body{
+font-family:'Courier New', Courier, monospace;
+  }
+
+  .nouveau-suivi-enregistrer {
+    margin-left: auto;
+   margin-right: auto;
+    width: 150px;
+    height: 40px;
+    flex-direction: row;
+   display: flex;
+   border-width: 0px;
+   border-radius: 20px;
+   background-color: #c9e265;
+   text-align : center;
+   margin-bottom : 30px;
+ }
+ .nouveau-suivi-text09 {
+  align-self: center;
+  margin-top: 0px;
+  text-align: center;
+  margin-left: auto;
+  margin-right :auto;
+  font-family :'Courier New', Courier, monospace;
+  font-size : 15px;
+  font-weight: bold;
+}
+  
+#questpopup{
+
+    width: 60%;
+    margin-top: 20% ;
+    margin-left: 25%;
+    border: 5px solid #88B9FA;
+    background-color: white;
+    border-radius: 15px;
+    top: 0;
+    position:absolute;
+}
+
+.reponse{
+  color :#88B9FA;
+}
+
+.questpopupHeader {
+  border: 2px solid #88B9FA;
+  padding: 18px;
+  text-align: center;
+  color: white;
+  background: #88B9FA;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#ferme{
+  float: right;
+}

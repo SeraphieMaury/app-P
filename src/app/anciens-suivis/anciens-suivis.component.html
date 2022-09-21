@@ -61,37 +61,89 @@
             <tr> 
                 <th>Date</th> 
                 <th>Informations envoyées</th> 
-                <!-- <th>Ordonnance</th>  -->
+                <th>Diagnostique</th> 
+                <th>Ordonnance</th>
             </tr>
-            <!-- <li *ngFor="let question of this.questions; let i=index">
-                <label>{{question}}</label> -->
-            <tr *ngFor="let questionnairereponse of this.questionnairesreponse; let i=index">
+            <tr *ngFor="let questionnairereponse of this.questionnairesreponse ; let i=index">
                 <td>{{this.dates[i]}}</td>
                 <td>
-                    <ul>
-                        <li *ngFor="let question of this.questions; let j=index">
-                          {{question}} :
-                          <div *ngIf="this.typequestion[j]=='choice' ">
-                            {{questionnairereponse.item[j].answer[0].valueCoding.display}}
-                          </div>
-                          <div *ngIf="this.typequestion[j]=='string' ">
-                            {{questionnairereponse.item[j].answer[0].valueString}}
-                          </div>
-                          <div *ngIf="this.typequestion[j]=='decimal' ">
-                            {{questionnairereponse.item[j].answer[0].valueDecimal}}
-                          </div>
-                          <div *ngIf="this.typequestion[j]=='integer' ">
-                            {{questionnairereponse.item[j].answer[0].valueInteger}}
-                          </div>
-                          <div *ngIf="this.typequestion[j]=='boolean' ">
-                            {{transfoBoolean(questionnairereponse.item[j].answer[0].valueBoolean)}}
-                          </div>
-                        </li>
-                    </ul>
+                  <button type="submit" class="nouveau-suivi-enregistrer button" (click)="visuQuest(i)">
+                    <span class="nouveau-suivi-text09">
+                      <span class="nouveau-suivi-text10"> 🔎 Visualiser</span>
+                      <br />
+                    </span>
+                  </button>
                 </td>
+                <td *ngFor="let diagnostique of this.diagnostiques">
+                  <div *ngIf="this.careplanid[i]===diagnostique.basedOn[0].reference ">
+                    {{diagnostique.conclusion}}
+                  </div>
+                </td>
+                <td  *ngFor="let ordonnance of this.ordonnances">
+                  <div *ngIf="this.careplanid[i]==ordonnance.basedOn[0].reference ;else pasordo">
+                    <button type="submit" class="nouveau-suivi-enregistrer button" (click)="visuOrdo(i)">
+                      <span class="nouveau-suivi-text09">
+                        <span class="nouveau-suivi-text10"> 🔎 Visualiser</span>
+                        <br />
+                      </span>
+                    </button>
+                  </div>
+                  <ng-template #pasordo> 
+                     <button type="submit" class="nouveau-suivi-enregistrer button"  disabled>
+                    <span class="nouveau-suivi-text09">
+                      <span class="nouveau-suivi-text10"> ⏳ En attente</span>
+                      <br />
+                    </span>
+                  </button> 
+                </ng-template>
+                </td> 
             </tr>
         </table>
       </div>
+    </div>
+
+
+    <div id="questpopup" *ngIf="popupquest==true">
+      <div class=questpopupHeader>
+        <button (click)="fermepopupquest()" id="ferme">❌</button>
+        <ng-container >Suivi du {{this.dates[this.questaffiche]}}</ng-container>
+      </div>
+      <ul>
+          <li *ngFor="let question of this.questions; let j=index">
+            {{question}} :
+            <div *ngIf="this.typequestion[j]=='choice' " class="reponse">
+              {{this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueCoding.display}}
+            </div>
+            <div *ngIf="this.typequestion[j]=='string' " class="reponse">
+              {{this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueString}}
+            </div>
+            <div *ngIf="this.typequestion[j]=='decimal' " class="reponse">
+              {{this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueDecimal}}
+            </div>
+            <div *ngIf="this.typequestion[j]=='integer' " class="reponse">
+              {{this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueInteger}}
+            </div>
+            <div *ngIf="this.typequestion[j]=='boolean' "class="reponse">
+              {{transfoBoolean(this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueBoolean)}}
+            </div>
+          </li>
+      </ul>
+    </div>
+
+    <div  id="questpopup" *ngIf="popupordo==true">
+      <div class=questpopupHeader>
+        <button (click)="fermepopupordo()" id="ferme">❌</button>
+        <ng-container >Ordonnance du suivi du {{this.dates[this.questaffiche]}}</ng-container>
+      </div>
+      <div *ngFor="let ordonnance of this.ordonnances">
+      <div *ngIf="this.careplanid[this.ordoaffiche]==ordonnance.basedOn[0].reference ">
+         <ul>
+          <li *ngFor="let medicament of ordonnance.medicationCodeableConcept.coding; let k=index">
+            {{medicament.display}} : {{ordonnance.dosageInstruction[k].text}}
+          </li>
+        </ul> 
+      </div>
+    </div>
     </div>
   </body>
 </html>
