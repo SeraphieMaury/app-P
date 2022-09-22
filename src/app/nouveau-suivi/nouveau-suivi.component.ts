@@ -266,6 +266,12 @@ export class NouveauSuiviComponent implements OnInit {
             });
         });
     }
+
+    reloadPage(){
+        setTimeout(function(){
+            location.reload()
+        }, 500);
+    }
 }
 
 

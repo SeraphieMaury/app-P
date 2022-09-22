@@ -51,7 +51,7 @@
           <h1 class="titrepage">Nouveau Suivi </h1>
         </div>
         <div class="container">
-          <form class="nouveau-suivi-form-constants" (submit)="envoiQuestionnaire()">
+          <form class="nouveau-suivi-form-constants" (submit)="envoiQuestionnaire(); reloadPage();">
             <ul>
               
               <li *ngFor="let question of this.questions; let i=index" class="liste">
