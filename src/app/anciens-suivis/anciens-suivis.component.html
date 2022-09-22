@@ -2,148 +2,134 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <title>MonProfil - App&apos;P</title>
-    <meta property="og:title" content="MonProfil - App'P" />
-    <meta property="og:title" content="NouveauSuivi - App'P" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
+<head>
+  <title>MonProfil - App&apos;P</title>
+  <meta property="og:title" content="MonProfil - App'P" />
+  <meta property="og:title" content="NouveauSuivi - App'P" />
 
-    <!-- <link rel="stylesheet" href="./style.css" /> -->
-    <link href="./anciens-suivis.component.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div>
-      
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
 
-      <div class="anciens-suivis-container">
-        <header data-role="Header" class="anciens-suivis-header">
-          <img
-            alt="image"
-            src="https://bashify.io/img/4065c14c621ad5c6fc775b7366bc53f6"
-            class="anciens-suivis-image"
-          />
-          <div class="anciens-suivis-btn-group">
-            <a href="index.html" class="anciens-suivis-anciens-suivi button" routerLink="/anciens-suivis">
-              <img
-                alt="image"
-                src="https://bashify.io/img/1bad202ce92c0e37b976bec61d559402"
-                class="anciens-suivis-image1"
-              />
-              <span class="anciens-suivis-text">
-                <span class="anciens-suivis-text01">Anciens Suivis</span>
+  <!-- <link rel="stylesheet" href="./style.css" /> -->
+  <link href="./anciens-suivis.component.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div>
+    <div class="anciens-suivis-container">
+      <header data-role="Header" class="anciens-suivis-header">
+        <img alt="image" src="https://bashify.io/img/4065c14c621ad5c6fc775b7366bc53f6" class="anciens-suivis-image" />
+        <div class="anciens-suivis-btn-group">
+          <a href="index.html" class="anciens-suivis-anciens-suivi button" routerLink="/anciens-suivis">
+            <img alt="image" src="https://bashify.io/img/1bad202ce92c0e37b976bec61d559402"
+              class="anciens-suivis-image1" />
+            <span class="anciens-suivis-text">
+              <span class="anciens-suivis-text01">Anciens Suivis</span>
+              <br />
+            </span>
+          </a>
+          <a href="mon-profil.html" class="anciens-suivis-mon-profil button" routerLink="/mon-profil">
+            <img alt="image" src="https://i.imgur.com/GiHaRf7.png" class="anciens-suivis-image2" />
+            <span class="anciens-suivis-text03">Mon Profil</span>
+          </a>
+        </div>
+      </header>
+      <div class="anciens-suivis-nouveu-suivi-container">
+        <a href="nouveau-suivi.html" class="anciens-suivis-anciens-suivi1 button" routerLink="/nouveau-suivi">
+          <img alt="image" src="https://i.imgur.com/c6Egi0j.png" class="anciens-suivis-image3" />
+          <span class="anciens-suivis-text04">Nouveau Suivi</span>
+        </a>
+        <h1 class="titrepage">Anciens suivis</h1>
+      </div>
+      <table>
+        <tr>
+          <th>Dates</th>
+          <th>Informations envoyées</th>
+          <th>Diagnostiques</th>
+          <th>Ordonnances</th>
+        </tr>
+        <tr *ngFor="let questionnairereponse of this.questionnairesreponse ; let i=index">
+          <td>{{this.dates[i]}}</td>
+          <td>
+            <button type="submit" class="nouveau-suivi-enregistrer button" (click)="visuQuest(i)">
+              <span class="nouveau-suivi-text09">
+                <span class="nouveau-suivi-text10"> 🔎 Visualiser</span>
                 <br />
               </span>
-            </a>
-            <a href="mon-profil.html" class="anciens-suivis-mon-profil button" routerLink="/mon-profil">
-              <img
-                alt="image"
-                src="https://i.imgur.com/GiHaRf7.png"
-                class="anciens-suivis-image2"
-              />
-              <span class="anciens-suivis-text03">Mon Profil</span>
-            </a>
-          </div>
-        </header>
-        <div class="anciens-suivis-nouveu-suivi-container">
-          <a href="nouveau-suivi.html" class="anciens-suivis-anciens-suivi1 button" routerLink="/nouveau-suivi">
-            <img
-              alt="image"
-              src="https://i.imgur.com/c6Egi0j.png"
-              class="anciens-suivis-image3"
-            />
-            <span class="anciens-suivis-text04">Nouveau Suivi</span>
-          </a>
-          <h1 class="titrepage">Anciens suivis</h1>
+            </button>
+          </td>
+          <td>
+            <div *ngFor="let diagnostique of this.diagnostiques">
+              <div *ngIf="this.careplanid[i]===diagnostique.basedOn[0].reference ">
+                {{diagnostique.conclusion}}
+              </div>
+            </div>
+          </td>
+          <td>
+            <div *ngFor="let ordonnance of this.ordonnances">
+              <div *ngIf="this.careplanid[i]==ordonnance.basedOn[0].reference ">
+                <button type="submit" class="nouveau-suivi-enregistrer button" (click)="visuOrdo(i)">
+                  <span class="nouveau-suivi-text09">
+                    <span class="nouveau-suivi-text10"> 🔎 Visualiser</span>
+                    <br />
+                  </span>
+                </button>
+              </div>
+              <ng-template #pasordo>
+                <button type="submit" class="nouveau-suivi-enregistrer button" disabled>
+                  <span class="nouveau-suivi-text09">
+                    <span class="nouveau-suivi-text10"> ⏳ En attente</span>
+                    <br />
+                  </span>
+                </button>
+              </ng-template>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="questpopup" *ngIf="popupquest==true">
+    <div class=questpopupHeader>
+      <button (click)="fermepopupquest()" id="ferme">❌</button>
+      <ng-container>Suivi du {{this.dates[this.questaffiche]}}</ng-container>
+    </div>
+    <ul>
+      <li *ngFor="let question of this.questions; let j=index">
+        {{question}} :
+        <div *ngIf="this.typequestion[j]=='choice' " class="reponse">
+          {{this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueCoding.display}}
         </div>
-        <table>
-            <tr> 
-                <th>Dates</th> 
-                <th>Informations envoyées</th> 
-                <th>Diagnostiques</th> 
-                <th>Ordonnances</th>
-            </tr>
-            <tr *ngFor="let questionnairereponse of this.questionnairesreponse ; let i=index">
-                <td>{{this.dates[i]}}</td>
-                <td>
-                  <button type="submit" class="nouveau-suivi-enregistrer button" (click)="visuQuest(i)">
-                    <span class="nouveau-suivi-text09">
-                      <span class="nouveau-suivi-text10"> 🔎 Visualiser</span>
-                      <br />
-                    </span>
-                  </button>
-                </td>
-                <td *ngFor="let diagnostique of this.diagnostiques">
-                  <div *ngIf="this.careplanid[i]===diagnostique.basedOn[0].reference ">
-                    {{diagnostique.conclusion}}
-                  </div>
-                </td>
-                <td  *ngFor="let ordonnance of this.ordonnances">
-                  <div *ngIf="this.careplanid[i]==ordonnance.basedOn[0].reference ;else pasordo">
-                    <button type="submit" class="nouveau-suivi-enregistrer button" (click)="visuOrdo(i)">
-                      <span class="nouveau-suivi-text09">
-                        <span class="nouveau-suivi-text10"> 🔎 Visualiser</span>
-                        <br />
-                      </span>
-                    </button>
-                  </div>
-                  <ng-template #pasordo> 
-                     <button type="submit" class="nouveau-suivi-enregistrer button"  disabled>
-                    <span class="nouveau-suivi-text09">
-                      <span class="nouveau-suivi-text10"> ⏳ En attente</span>
-                      <br />
-                    </span>
-                  </button> 
-                </ng-template>
-                </td> 
-            </tr>
-        </table>
-      </div>
+        <div *ngIf="this.typequestion[j]=='string' " class="reponse">
+          {{this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueString}}
+        </div>
+        <div *ngIf="this.typequestion[j]=='decimal' " class="reponse">
+          {{this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueDecimal}}
+        </div>
+        <div *ngIf="this.typequestion[j]=='integer' " class="reponse">
+          {{this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueInteger}}
+        </div>
+        <div *ngIf="this.typequestion[j]=='boolean' " class="reponse">
+          {{transfoBoolean(this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueBoolean)}}
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="questpopup" *ngIf="popupordo==true">
+    <div class=questpopupHeader>
+      <button (click)="fermepopupordo()" id="ferme">❌</button>
+      <ng-container>Ordonnance du suivi du {{this.dates[this.questaffiche]}}</ng-container>
     </div>
-
-
-    <div id="questpopup" *ngIf="popupquest==true">
-      <div class=questpopupHeader>
-        <button (click)="fermepopupquest()" id="ferme">❌</button>
-        <ng-container >Suivi du {{this.dates[this.questaffiche]}}</ng-container>
-      </div>
-      <ul>
-          <li *ngFor="let question of this.questions; let j=index">
-            {{question}} :
-            <div *ngIf="this.typequestion[j]=='choice' " class="reponse">
-              {{this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueCoding.display}}
-            </div>
-            <div *ngIf="this.typequestion[j]=='string' " class="reponse">
-              {{this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueString}}
-            </div>
-            <div *ngIf="this.typequestion[j]=='decimal' " class="reponse">
-              {{this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueDecimal}}
-            </div>
-            <div *ngIf="this.typequestion[j]=='integer' " class="reponse">
-              {{this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueInteger}}
-            </div>
-            <div *ngIf="this.typequestion[j]=='boolean' "class="reponse">
-              {{transfoBoolean(this.questionnairesreponse[this.questaffiche].item[j].answer[0].valueBoolean)}}
-            </div>
-          </li>
-      </ul>
-    </div>
-
-    <div  id="questpopup" *ngIf="popupordo==true">
-      <div class=questpopupHeader>
-        <button (click)="fermepopupordo()" id="ferme">❌</button>
-        <ng-container >Ordonnance du suivi du {{this.dates[this.questaffiche]}}</ng-container>
-      </div>
-      <div *ngFor="let ordonnance of this.ordonnances">
+    <div *ngFor="let ordonnance of this.ordonnances">
       <div *ngIf="this.careplanid[this.ordoaffiche]==ordonnance.basedOn[0].reference ">
-         <ul>
+        <ul>
           <li *ngFor="let medicament of ordonnance.medicationCodeableConcept.coding; let k=index">
             {{medicament.display}} : {{ordonnance.dosageInstruction[k].text}}
           </li>
-        </ul> 
+        </ul>
       </div>
     </div>
-    </div>
-  </body>
+  </div>
+</body>
 </html>

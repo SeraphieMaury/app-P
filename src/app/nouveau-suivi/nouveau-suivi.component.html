@@ -2,298 +2,101 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <title>NouveauSuivi - App&apos;P</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
+<head>
+  <title>NouveauSuivi - App&apos;P</title>
 
-    <!-- <link rel="stylesheet" href="./style.css" /> -->
-    <link href="./nouveau-suivi.component.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+
+  <!-- <link rel="stylesheet" href="./style.css" /> -->
+  <link href="./nouveau-suivi.component.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div>
 
 
-      <div class="nouveau-suivi-container">
-        <header data-role="Header" class="nouveau-suivi-header">
-          <img
-            alt="image"
-            src="https://bashify.io/img/4065c14c621ad5c6fc775b7366bc53f6"
-            class="nouveau-suivi-image"
-          />
-          <div class="nouveau-suivi-container01">
-            <div class="nouveau-suivi-nav"></div>
-          </div>
-          <div class="nouveau-suivi-btn-group">
-            <a href="index.html" class="nouveau-suivi-anciens-suivi button" routerLink="/anciens-suivis">
-              <img
-                alt="image"
-                src="https://bashify.io/img/1bad202ce92c0e37b976bec61d559402"
-                class="nouveau-suivi-image1"
-              />
-              <span class="nouveau-suivi-text">
-                <span class="nouveau-suivi-text01">Anciens Suivis</span>
-                <br />
-              </span>
-            </a>
-            <a href="mon-profil.html" class="nouveau-suivi-mon-profil button" routerLink="/mon-profil">
-              <img
-                alt="image"
-                src="https://i.imgur.com/GiHaRf7.png"
-                class="nouveau-suivi-image2"
-              />
-              <span class="nouveau-suivi-text03">Mon Profil</span>
-            </a>
-          </div>
-        </header>
-        <div class="nouveau-suivi-nouveu-suivi-container">
-          <h1 class="titrepage">Nouveau Suivi </h1>
+    <div class="nouveau-suivi-container">
+      <header data-role="Header" class="nouveau-suivi-header">
+        <img alt="image" src="https://bashify.io/img/4065c14c621ad5c6fc775b7366bc53f6" class="nouveau-suivi-image" />
+        <div class="nouveau-suivi-container01">
+          <div class="nouveau-suivi-nav"></div>
         </div>
-        <div class="container">
-          <form class="nouveau-suivi-form-constants" (submit)="envoiQuestionnaire(); reloadPage();">
-            <ul>
-              
-              <li *ngFor="let question of this.questions; let i=index" class="liste">
-                <div class="box">
+        <div class="nouveau-suivi-btn-group">
+          <a href="index.html" class="nouveau-suivi-anciens-suivi button" routerLink="/anciens-suivis">
+            <img alt="image" src="https://bashify.io/img/1bad202ce92c0e37b976bec61d559402"
+              class="nouveau-suivi-image1" />
+            <span class="nouveau-suivi-text">
+              <span class="nouveau-suivi-text01">Anciens Suivis</span>
+              <br />
+            </span>
+          </a>
+          <a href="mon-profil.html" class="nouveau-suivi-mon-profil button" routerLink="/mon-profil">
+            <img alt="image" src="https://i.imgur.com/GiHaRf7.png" class="nouveau-suivi-image2" />
+            <span class="nouveau-suivi-text03">Mon Profil</span>
+          </a>
+        </div>
+      </header>
+      <div class="nouveau-suivi-nouveu-suivi-container">
+        <h1 class="titrepage">Nouveau Suivi </h1>
+      </div>
+      <div class="container">
+        <form class="nouveau-suivi-form-constants" (submit)="envoiQuestionnaire(); reloadPage();">
+          <ul>
+
+            <li *ngFor="let question of this.questions; let i=index" class="liste">
+              <div class="box">
                 <label class="question">{{question}}</label>
-              <br>
-              <div *ngIf="this.typequestion[i]=='string' ||this.typequestion[i]=='decimal' ">
                 <br>
-                <input
-                type="text"
-                id={{i}}
-                class="inputtext"
-                required
-              />
-            </div>
-            <br>
-            <div *ngIf="this.typequestion[i]=='integer'">
-              <input
-              type="number"
-              id={{i}}
-              class="inputtext"
-              required
-            />
-          </div>
-          <div *ngIf="this.typequestion[i]=='boolean'">
-            <br>
-            <div>
-              <input type="radio" id="oui{{i}}"  name="choix{{i}}" class="radio"  value="oui"
-                     checked>
-              <label for="oui{{i}}">Oui</label>
-            </div>
-            <br>
-            <div>
-              <input type="radio" id="non{{i}}" name="choix{{i}}" value="non" class="radio">
-              <label for="non{{i}}">Non</label>
-            </div>
-            <br>
-        </div>
-        <div *ngIf="this.typequestion[i]=='choice'">
-          <div  *ngFor="let reponse of this.questionnaire.item[i].answerOption; let j=index">
-            <br>
-            <div>
-              <input type="radio" id="{{reponse.valueCoding.display}}{{i}}" name="choix{{i}}" value="{{reponse.valueCoding.display}}" class="radio" checked>
-              <label for="{{reponse.valueCoding.display}}{{i}}">{{reponse.valueCoding.display}}</label>
-            </div>
-          </div>
-          <br>
-      </div> 
-    </div>
-              </li>
-            
-            </ul>
-            <button type="submit" class="nouveau-suivi-enregistrer button">
-              <img
-                alt="image"
-                src="https://bashify.io/img/fce74472aa8ab09839e4dfed22df4335"
-                class="nouveau-suivi-image4"
-              />
-              <span class="nouveau-suivi-text09">
-                <span class="nouveau-suivi-text10">Envoyer</span>
-                <br />
-              </span>
-            </button>
+                <div *ngIf="this.typequestion[i]=='string' ||this.typequestion[i]=='decimal' ">
+                  <br>
+                  <input type="text" id={{i}} class="inputtext" required />
+                </div>
+                <br>
+                <div *ngIf="this.typequestion[i]=='integer'">
+                  <input type="number" id={{i}} class="inputtext" required />
+                </div>
+                <div *ngIf="this.typequestion[i]=='boolean'">
+                  <br>
+                  <div>
+                    <input type="radio" id="oui{{i}}" name="choix{{i}}" class="radio" value="oui" checked>
+                    <label for="oui{{i}}">Oui</label>
+                  </div>
+                  <br>
+                  <div>
+                    <input type="radio" id="non{{i}}" name="choix{{i}}" value="non" class="radio">
+                    <label for="non{{i}}">Non</label>
+                  </div>
+                  <br>
+                </div>
+                <div *ngIf="this.typequestion[i]=='choice'">
+                  <div *ngFor="let reponse of this.questionnaire.item[i].answerOption; let j=index">
+                    <br>
+                    <div>
+                      <input type="radio" id="{{reponse.valueCoding.display}}{{i}}" name="choix{{i}}"
+                        value="{{reponse.valueCoding.display}}" class="radio" checked>
+                      <label for="{{reponse.valueCoding.display}}{{i}}">{{reponse.valueCoding.display}}</label>
+                    </div>
+                  </div>
+                  <br>
+                </div>
+              </div>
+            </li>
 
-          </form>
-
- <!--          <form id="yes_1" class="nouveau-suivi-form-variables">
-            <label for="poidactuel" class="nouveau-suivi-label">
-              <span>Poids actuel</span>
-              <span class="nouveau-suivi-text06">*</span>
-            </label>
-            <input
-              type="text"
-              id="poidactuel"
-              value="80 kg"
-              placeholder="placeholder"
-              class="nouveau-suivi-poidactuel input"
-            />
-            <label for="poidscible" class="nouveau-suivi-label01">
-              <span>Poids ciblé</span>
-              <span class="nouveau-suivi-text08">*</span>
-            </label>
-            <input
-              type="text"
-              id="poidscible"
-              value="173 Cm"
-              placeholder="placeholder"
-              class="nouveau-suivi-poidcible input"
-            />
-            <label for="allergies" class="nouveau-suivi-label02">
-              Allergies
-            </label>
-            <input
-              type="text"
-              id="allergies"
-              value="Cacahuète"
-              placeholder="placeholder"
-              autocomplete="Cacahuète"
-              class="nouveau-suivi-input input"
-            />
-            <label for="poidscible" class="nouveau-suivi-label03">
-              Tension
-            </label>
-            <input
-              type="text"
-              id="tensio"
-              value="120/80 mmHg"
-              disabled
-              placeholder="placeholder"
-              class="nouveau-suivi-input1 input"
-            />
-            <button class="nouveau-suivi-enregistrer button">
-              <img
-                alt="image"
-                src="https://bashify.io/img/fce74472aa8ab09839e4dfed22df4335"
-                class="nouveau-suivi-image4"
-              />
-              <span class="nouveau-suivi-text09">
-                <span class="nouveau-suivi-text10">Envoyer</span>
-                <br />
-              </span>
-            </button>
-            <label for="allergies" class="nouveau-suivi-label04">
-              Intolérance
-            </label>
-            <input
-              type="text"
-              id="intolerance"
-              value="Lactose"
-              placeholder="placeholder"
-              autocomplete="Cacahuète"
-              class="nouveau-suivi-input2 input"
-            />
-            <label for="poidscible" class="nouveau-suivi-label05">
-              Température
-            </label>
-            <input
-              type="text"
-              id="temperature"
-              value="37°C"
-              disabled
-              placeholder="placeholder"
-              class="nouveau-suivi-input3 input"
-            />
-            <label for="poidscible" class="nouveau-suivi-label06">
-              fréquence cardiaque
-            </label>
-            <input
-              type="text"
-              id="freqcardi"
-              value="80 / min"
-              placeholder="placeholder"
-              class="nouveau-suivi-input4 input"
-            />
-            <label for="poidscible" class="nouveau-suivi-label07">
-              fréquence respiratoire
-            </label>
-            <input
-              type="text"
-              id="freqresp"
-              value="13 cycle"
-              placeholder="placeholder"
-              class="nouveau-suivi-input5 input"
-            />
-            <div id="q1" class="nouveau-suivi-container02">
-              <label for="poidscible" class="nouveau-suivi-label08">
-                Avez-vous changé de régime depuis votre dernière consultation ?
-                *
-              </label>
-              <div id="r1" class="nouveau-suivi-container03">
-                <input type="radio" name="radio1" id="r1_y" />
-                <label class="nouveau-suivi-text12">Oui</label>
-                <input
-                  type="radio"
-                  name="radio1"
-                  id="r1_n"
-                  class="nouveau-suivi-radiobutton1"
-                />
-                <label class="nouveau-suivi-text13">Non</label>
-              </div>
-            </div>
-            <div id="q2" class="nouveau-suivi-container04">
-              <label for="poidscible" class="nouveau-suivi-label09">
-                Êtes-vous devenu ménopausé depuis votre dernière consultation ?
-                *
-              </label>
-              <div id="r2" class="nouveau-suivi-container05">
-                <input type="radio" id="r2_y" name="radio2" />
-                <label class="nouveau-suivi-text14">Oui</label>
-                <input
-                  type="radio"
-                  name="radio2"
-                  id="r2_n"
-                  class="nouveau-suivi-radiobutton3"
-                />
-                <label class="nouveau-suivi-text15">Non</label>
-              </div>
-            </div>
-            <div id="q3" class="nouveau-suivi-container06">
-              <label for="poidscible" class="nouveau-suivi-label10">
-                Avez-vous arrêté depuis votre dernière consultation ? *
-              </label>
-              <div id="r2" class="nouveau-suivi-container07">
-                <input type="radio" id="r3_y" name="radio3" />
-                <label class="nouveau-suivi-text16">Oui</label>
-                <input
-                  type="radio"
-                  name="radio3"
-                  id="r3_n"
-                  class="nouveau-suivi-radiobutton5"
-                />
-                <label class="nouveau-suivi-text17">Non</label>
-              </div>
-            </div>
-            <div id="q4" class="nouveau-suivi-container08">
-              <label for="poidscible" class="nouveau-suivi-label11">
-                Avez-vous augmenté ou diminué votre activité physique depuis
-                votre dernière consultation ? *
-              </label>
-              <div id="r2" class="nouveau-suivi-container09">
-                <input type="radio" id="r4_y" name="radio4" />
-                <label class="nouveau-suivi-text18">Oui</label>
-                <input
-                  type="radio"
-                  name="radio4"
-                  id="r4_n"
-                  class="nouveau-suivi-radiobutton7"
-                />
-                <label class="nouveau-suivi-text19">Non</label>
-              </div>
-            </div>
-            <div id="autresremarques" class="nouveau-suivi-container10">
-              <label class="nouveau-suivi-text20">
-                <span>Autres remarques:</span>
-                <br />
-                <br />
-              </label>
-              <textarea class="nouveau-suivi-textarea textarea"></textarea>
-            </div>
-          </form> -->
-        </div>
+          </ul>
+          <button type="submit" class="nouveau-suivi-enregistrer button">
+            <img alt="image" src="https://bashify.io/img/fce74472aa8ab09839e4dfed22df4335"
+              class="nouveau-suivi-image4" />
+            <span class="nouveau-suivi-text09">
+              <span class="nouveau-suivi-text10">Envoyer</span>
+              <br />
+            </span>
+          </button>
+        </form>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

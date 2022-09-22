@@ -2,212 +2,98 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <title>MonProfil - App&apos;P</title>
-    <meta property="og:title" content="MonProfil - App'P" />
-    <meta property="og:title" content="NouveauSuivi - App'P" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
+<head>
+  <title>MonProfil - App&apos;P</title>
+  <meta property="og:title" content="MonProfil - App'P" />
+  <meta property="og:title" content="NouveauSuivi - App'P" />
 
-    <!-- <link rel="stylesheet" href="../style.css" /> -->
-    <link href="./mon-profil.component.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div>
-      
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
 
-      <div class="mon-profil-container">
-        <header data-role="Header" class="mon-profil-header">
-          <img
-            alt="image"
-            src="https://bashify.io/img/4065c14c621ad5c6fc775b7366bc53f6"
-            class="mon-profil-image"
-          />
-          <div class="mon-profil-btn-group">
-            <a href="index.html" class="mon-profil-anciens-suivi button" routerLink="/anciens-suivis">
-              <img
-                alt="image"
-                src="https://bashify.io/img/1bad202ce92c0e37b976bec61d559402"
-                class="mon-profil-image1"
-              />
-              <span class="mon-profil-text">
-                <span class="mon-profil-text01">Anciens Suivis</span>
-                <br />
-              </span>
-            </a>
-            <a href="mon-profil.html" class="mon-profil-mon-profil button" routerLink="/mon-profil">
-              <img
-                alt="image"
-                src="https://i.imgur.com/GiHaRf7.png"
-                class="mon-profil-image2"
-              />
-              <span class="mon-profil-text03">Mon Profil</span>
-            </a>
-          </div>
-        </header>
-        <div class="mon-profil-nouveu-suivi-container">
-          <a href="nouveau-suivi.html" class="mon-profil-anciens-suivi1 button" routerLink="/nouveau-suivi">
-            <img
-              alt="image"
-              src="https://i.imgur.com/c6Egi0j.png"
-              class="mon-profil-image3"
-            />
-            <span class="mon-profil-text04">Nouveau Suivi</span>
+  <!-- <link rel="stylesheet" href="../style.css" /> -->
+  <link href="./mon-profil.component.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div>
+    <div class="mon-profil-container">
+      <header data-role="Header" class="mon-profil-header">
+        <img alt="image" src="https://bashify.io/img/4065c14c621ad5c6fc775b7366bc53f6" class="mon-profil-image" />
+        <div class="mon-profil-btn-group">
+          <a href="index.html" class="mon-profil-anciens-suivi button" routerLink="/anciens-suivis">
+            <img alt="image" src="https://bashify.io/img/1bad202ce92c0e37b976bec61d559402" class="mon-profil-image1" />
+            <span class="mon-profil-text">
+              <span class="mon-profil-text01">Anciens Suivis</span>
+              <br />
+            </span>
           </a>
-          <h1 class="titrepage">Mon Profil</h1>
+          <a href="mon-profil.html" class="mon-profil-mon-profil button" routerLink="/mon-profil">
+            <img alt="image" src="https://i.imgur.com/GiHaRf7.png" class="mon-profil-image2" />
+            <span class="mon-profil-text03">Mon Profil</span>
+          </a>
         </div>
-        <div class="mon-profil-container-constants">
-          <form class="mon-profil-form-constants">
-            <label for="profilprenom" class="mon-profil-text06">Prénom</label>
-            <input
-              type="text"
-              id="profilprenom"
-              value={{this.prenom}} 
-              disabled
-              placeholder="placeholder"
-              class="mon-profil-textinput input"
-            />
-            <label for="profilnom" class="mon-profil-text07">Nom</label>
-            <input
-              type="text"
-              id="profilnom"
-              value={{this.nom}} 
-              disabled
-              placeholder="Nom"
-              class="mon-profil-textinput1 input"
-            />
-            <label for="profilprenom" class="mon-profil-text08">DDN</label>
-            <input
-              type="text"
-              id="profilddn"
-              value={{this.dtn}} 
-              disabled
-              placeholder="date de naissance"
-              class="mon-profil-textinput2 input"
-            />
-            <label for="profilnom" class="mon-profil-text09">Sexe</label>
-            <input
-              type="text"
-              id="profilsexe"
-              value={{this.sexe}} 
-              disabled
-              placeholder="Sexe"
-              class="mon-profil-textinput3 input"
-            />
-            <label for="profilemail" class="mon-profil-text10">Email</label>
-            <input
-              type="text"
-              id="profilemail"
-              value={{this.email}} 
-              disabled
-              placeholder="Email"
-              class="mon-profil-textinput4 input"
-            />
-            <label for="profilnumero" class="mon-profil-text11">Numéro</label>
-            <input
-              type="number"
-              id="profilnumero"
-              value={{this.num}} 
-              disabled
-              placeholder="numero"
-              class="mon-profil-textinput5 input"
-            />
-            <label for="profiladresse" class="mon-profil-text123">Adresse</label>
-            <input
-              type="adresse"
-              id="profilnumero"
-              value={{this.adresse}} 
-              disabled
-              placeholder="adresse"
-              class="mon-profil-textinput123 input"
-            />
-          </form>
-        </div>
-        <div class="mon-profil-container-variables">
-          <form class="mon-profil-form-variables">
-            <label for="profilprenom" class="mon-profil-text12">Taille (cm)</label>
-            <input
-              type="text"
-              value={{this.taille}}
-              placeholder="placeholder"
-              class="mon-profil-taille input"
-              id="taille"
-            /> 
-            <button class="mon-profil-enregistrer button" (click)="modifierTaille(); reloadPage();">
-              <img
-                alt="image"
-                src="https://bashify.io/img/7f3af06d6f7af4ce1212e1ef16fe0023"
-                class="mon-profil-image4"
-              />
-              <span class="mon-profil-text15">
-                <span class="mon-profil-text16">Enregistrer</span>
-                <br />
-              </span>
-            </button>
-            <!-- <label for="profilprenom" class="mon-profil-text13">
-              Allergies
-            </label>
-            <input
-              type="text"
-              value="Cacahuète"
-              placeholder="date de naissance"
-              class="mon-profil-allergies input"
-            />
-            <label for="profilemail" class="mon-profil-text14">
-              Intolérance
-            </label>
-            <input
-              type="text"
-              id="profilemail"
-              value="Lactose"
-              placeholder="Email"
-              class="mon-profil-intolerance input"
-            /> -->
-            
-            <!-- <label for="profilprenom" class="mon-profil-text13"> Allergies : </label>
-              <ul>
-                <li *ngFor="let allergie of this.allergies" >
-                  <div>{{allergie}}</div> 
-                </li>
-              </ul>
-              <input
-              type="text"
-              placeholder="nouvelle allergie/intolérance"
-              class="mon-profil-allergies input"
-              id="allergie"
-            /> -->
-              <!-- <button  (click)="ajouterAllergie()">
-                  <span class="mon-profil-text16">Ajouter</span>
-                  <br />
-              </button> -->
-
-              
-                <mat-form-field class="example-chip-list" appearance="fill">
-                  <span class="mon-profil-text120">Allergies: </span>
-
-                  <mat-chip-list #chipList aria-label="Allergie selection">
-                    <mat-chip *ngFor="let allergie of allergies" (removed)="supprimerAllergie(allergie)">
-                      {{allergie}}
-                      <button matChipRemove>
-                        <mat-icon>cancel</mat-icon>
-                      </button>
-                    </mat-chip>
-                    <input class="input-chip"placeholder="Ajouter Allergie"
-                           [matChipInputFor]="chipList"
-                           [matChipInputAddOnBlur]="addOnBlur"
-                           (matChipInputTokenEnd)="ajouterAllergie($event)">
-                  </mat-chip-list>
-                </mat-form-field>
-              
-                <!-- [matChipInputSeparatorKeyCodes]="separatorKeysCodes" -->
-            
-          </form>
-          
-          
-        </div>
+      </header>
+      <div class="mon-profil-nouveu-suivi-container">
+        <a href="nouveau-suivi.html" class="mon-profil-anciens-suivi1 button" routerLink="/nouveau-suivi">
+          <img alt="image" src="https://i.imgur.com/c6Egi0j.png" class="mon-profil-image3" />
+          <span class="mon-profil-text04">Nouveau Suivi</span>
+        </a>
+        <h1 class="titrepage">Mon Profil</h1>
+      </div>
+      <div class="mon-profil-container-constants">
+        <form class="mon-profil-form-constants">
+          <label for="profilprenom" class="mon-profil-text06">Prénom</label>
+          <input type="text" id="profilprenom" value={{this.prenom}} disabled placeholder="placeholder"
+            class="mon-profil-textinput input" />
+          <label for="profilnom" class="mon-profil-text07">Nom</label>
+          <input type="text" id="profilnom" value={{this.nom}} disabled placeholder="Nom"
+            class="mon-profil-textinput1 input" />
+          <label for="profilprenom" class="mon-profil-text08">DDN</label>
+          <input type="text" id="profilddn" value={{this.dtn}} disabled placeholder="date de naissance"
+            class="mon-profil-textinput2 input" />
+          <label for="profilnom" class="mon-profil-text09">Sexe</label>
+          <input type="text" id="profilsexe" value={{this.sexe}} disabled placeholder="Sexe"
+            class="mon-profil-textinput3 input" />
+          <label for="profilemail" class="mon-profil-text10">Email</label>
+          <input type="text" id="profilemail" value={{this.email}} disabled placeholder="Email"
+            class="mon-profil-textinput4 input" />
+          <label for="profilnumero" class="mon-profil-text11">Numéro</label>
+          <input type="number" id="profilnumero" value={{this.num}} disabled placeholder="numero"
+            class="mon-profil-textinput5 input" />
+          <label for="profiladresse" class="mon-profil-text123">Adresse</label>
+          <input type="adresse" id="profilnumero" value={{this.adresse}} disabled placeholder="adresse"
+            class="mon-profil-textinput123 input" />
+        </form>
+      </div>
+      <div class="mon-profil-container-variables">
+        <form class="mon-profil-form-variables">
+          <label for="profilprenom" class="mon-profil-text12">Taille (cm)</label>
+          <input type="text" value={{this.taille}} placeholder="placeholder" class="mon-profil-taille input"
+            id="taille" />
+          <button class="mon-profil-enregistrer button" (click)="modifierTaille(); reloadPage();">
+            <img alt="image" src="https://bashify.io/img/7f3af06d6f7af4ce1212e1ef16fe0023" class="mon-profil-image4" />
+            <span class="mon-profil-text15">
+              <span class="mon-profil-text16">Enregistrer</span>
+              <br />
+            </span>
+          </button>
+          <mat-form-field class="example-chip-list" appearance="fill">
+            <span class="mon-profil-text120">Allergies: </span>
+            <mat-chip-list #chipList aria-label="Allergie selection">
+              <mat-chip *ngFor="let allergie of allergies" (removed)="supprimerAllergie(allergie)">
+                {{allergie}}
+                <button matChipRemove>
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </mat-chip>
+              <input class="input-chip" placeholder="Ajouter Allergie" [matChipInputFor]="chipList"
+                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="ajouterAllergie($event)">
+            </mat-chip-list>
+          </mat-form-field>
+        </form>
       </div>
     </div>
-    
-  </body>
+  </div>
+</body>
 </html>

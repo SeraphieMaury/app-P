@@ -1,4 +1,3 @@
-
 .mon-profil-container {
   background-color: #fdfff3;
 }
@@ -26,6 +25,7 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
 .mon-profil-anciens-suivi {
   width: 171px;
   height: 36px;
@@ -255,6 +255,7 @@
   width: 144px;
   position: absolute;
 }
+
 .mon-profil-text123 {
   left: 61px;
   top: 311px;
@@ -299,6 +300,7 @@
   padding-top: 0px;
   padding-right: 8px;
 }
+
 .mon-profil-text120 {
   top: -50px;
   left: 10px;
@@ -306,7 +308,7 @@
   font-size: 20px;
   padding-top: 0px;
   padding-right: 8px;
-  font-family:Courier New, monospace;
+  font-family: Courier New, monospace;
 
 }
 
@@ -395,6 +397,7 @@
     width: 185px;
     height: 118px;
   }
+
   .mon-profil-anciens-suivi {
     display: flex;
     flex-direction: row;
@@ -406,12 +409,12 @@
   }
 
   .mon-profil-text01 {
-  font-family: Courier New, monospace;
-  font-size: 20px;
-  text-align: center;
-  align-self: center;
-  margin-top: 0px;
-  margin-left: 5px;
+    font-family: Courier New, monospace;
+    font-size: 20px;
+    text-align: center;
+    align-self: center;
+    margin-top: 0px;
+    margin-left: 5px;
     margin-left: 8px;
   }
 
@@ -424,6 +427,7 @@
   .mon-profil-text03 {
     margin-left: 8px;
   }
+
   .mon-profil-anciens-suivi1 {
     display: flex;
     flex-direction: row;
@@ -464,6 +468,7 @@
   .mon-profil-header {
     padding: 16px;
   }
+
   .mon-profil-anciens-suivi1 {
     width: 301px;
     height: 58px;
@@ -554,7 +559,7 @@ html {
 }
 
 html {
-  font-family:Courier New, monospace;
+  font-family: Courier New, monospace;
   font-size: 16px;
 }
 
@@ -597,6 +602,7 @@ html {
   text-transform: none;
   text-decoration: none;
 }
+
 .example-chip-list {
   width: 100%;
   height: 198px;
@@ -607,13 +613,13 @@ html {
 
 }
 
-.input-chip{
+.input-chip {
   background-color: #c7e0ff;
   border-radius: 25px;
   width: 150px;
   height: 30px;
   padding-left: 10px;
-  
+
 }
 
 
@@ -627,7 +633,7 @@ input.mat-chip-input {
   width: 163px;
   margin: 4px;
   flex: none;
-  
+
 }
 
 .mat-chip-list-wrapper {
@@ -635,7 +641,8 @@ input.mat-chip-input {
   position: absolute;
 
 }
-.titrepage{
+
+.titrepage {
   align-self: flex-start;
   margin-left: 64px;
   font-size: 23px;
@@ -647,10 +654,12 @@ input.mat-chip-input {
   text-align: center;
 
 }
+
 .mat-form-field-wrapper {
   position: absolute;
   margin-top: 35px;
 }
-body{
-  font-family:Courier New, monospace;
+
+body {
+  font-family: Courier New, monospace;
 }

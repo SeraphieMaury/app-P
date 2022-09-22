@@ -23,6 +23,7 @@ export class NouveauSuiviComponent implements OnInit {
     }
 
     ngOnInit() {
+        //Récupération questions
         this.http.get("https://fhir.alliance4u.io/api/questionnaire/6322c934256fb300187f6e7c").subscribe(data => {
             this.questionnaire = data;
             for (let q of this.questionnaire.item) {
@@ -47,6 +48,7 @@ export class NouveauSuiviComponent implements OnInit {
             "created": (new Date()).toJSON()
         });
 
+        //Ajout care plan
         this.http.post("https://fhir.alliance4u.io/api/care-plan", bodycareplan, { 'headers': headers }).subscribe(data => {
             this.careplan = data;
             this.id = this.careplan.id;
@@ -150,18 +152,18 @@ export class NouveauSuiviComponent implements OnInit {
                             "linkId": "poidsActuel",
                             "text": "Poids actuel",
                             "answer": [
-                                 {
-                                     "valueDecimal": poidsactuel
-                                 }
+                                {
+                                    "valueDecimal": poidsactuel
+                                }
                             ]
                         },
                         {
                             "linkId": "poidsCible",
                             "text": "Poids ciblé (kg)",
                             "answer": [
-                                 {
+                                {
                                     "valueDecimal": poidscible
-                                 }
+                                }
                             ]
                         },
                         {
@@ -170,7 +172,7 @@ export class NouveauSuiviComponent implements OnInit {
                             "answer": [
                                 {
                                     "valueDecimal": tensionarteriellesystolique
-                                 }
+                                }
                             ]
                         },
                         {
@@ -267,9 +269,9 @@ export class NouveauSuiviComponent implements OnInit {
         });
     }
 
-    reloadPage(){
-        setTimeout(function(){
-            location.reload()
+    reloadPage() {
+        setTimeout(function () {
+            location.reload();
         }, 500);
     }
 }
